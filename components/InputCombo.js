@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Input = styled.input`
@@ -34,6 +35,17 @@ const ComboWrapper = styled.div`
 `;
 
 const InputCombo = (props) => {
+  const [content, setContent] = useState("");
+
+  const handleContentChange = (e) => {
+    setContent(e.target.value);
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      props.stateFn(content);
+    }, 500);
+  }, [content]);
   return (
     <ComboWrapper>
       <InputLabel htmlFor={props.label}>{props.label}</InputLabel>
@@ -43,6 +55,8 @@ const InputCombo = (props) => {
           name={props.label}
           type={props.type}
           height={props.height}
+          required={props.required}
+          onChange={handleContentChange}
         />
       ) : (
         <Input
@@ -50,6 +64,8 @@ const InputCombo = (props) => {
           name={props.label}
           type={props.type}
           height={props.height}
+          required={props.required}
+          onChange={handleContentChange}
         />
       )}
     </ComboWrapper>

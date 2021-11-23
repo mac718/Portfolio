@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
 import InputCombo from "./InputCombo";
+import { useState } from "react";
 
 const ContactSection = styled.section`
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background: black;
   color: white;
@@ -58,7 +59,7 @@ const ContactForm = styled.form`
   padding: 2em;
   border: 1px solid white;
   border-radius: 1em;
-  height: 80%;
+  height: 90%;
   @media (max-width: 500px) {
     margin: 1em;
   }
@@ -67,7 +68,7 @@ const ContactForm = styled.form`
 const ContactFormHeading = styled.div`
   font-size: 3em;
   text-align: center;
-  margin-bottom: 2em;
+  margin-bottom: 1.5em;
   color: white;
   font-family: "Courier New", Courier, monospace;
 `;
@@ -90,6 +91,20 @@ const Submit = styled.button`
 `;
 
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const getName = (name) => {
+    setName(name);
+    console.log(name);
+  };
+  const getEmail = (email) => {
+    setEmail(email);
+  };
+  const getMessage = (message) => {
+    setMessage(message);
+  };
   return (
     <>
       <ContactFormHeading>Contact</ContactFormHeading>
@@ -115,9 +130,27 @@ const Contact = () => {
           </DetailsList>
         </Info>
         <ContactForm>
-          <InputCombo label="Name" type="text" area={false} />
-          <InputCombo label="Email" type="email" area={false} />
-          <InputCombo label="Message" type="text" area={true} />
+          <InputCombo
+            label="Name"
+            type="text"
+            area={false}
+            required={false}
+            stateFn={getName}
+          />
+          <InputCombo
+            label="Email"
+            type="email"
+            area={false}
+            required={true}
+            stateFn={getEmail}
+          />
+          <InputCombo
+            label="Message"
+            type="text"
+            area={true}
+            required={true}
+            stateFn={getMessage}
+          />
           <Submit>Send Message</Submit>
         </ContactForm>
       </ContactSection>
