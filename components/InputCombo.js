@@ -42,9 +42,11 @@ const InputCombo = (props) => {
   };
 
   useEffect(() => {
-    setTimeout(() => {
+    let timed = setTimeout(() => {
       props.stateFn(content);
     }, 500);
+
+    return () => clearTimeout(timed);
   }, [content]);
   return (
     <ComboWrapper>
