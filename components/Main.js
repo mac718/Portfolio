@@ -7,6 +7,8 @@ import Bio from "./Bio";
 import NavBar from "./NavBar";
 import { GoMarkGithub } from "react-icons/go";
 import { MdScreenShare } from "react-icons/md";
+import RecentRepos from "./RecentRepos";
+import Contact from "./Contact";
 
 const MainWrapper = styled.div`
   background: black;
@@ -115,9 +117,10 @@ const SubSubHeading = styled.div`
   }
 `;
 
-const ProjectsSection = styled.div`
+const ProjectsSection = styled.section`
   width: 100%;
   background: black;
+  height: 100vh;
 `;
 
 const ProjectsWrapper = styled.div`
@@ -126,6 +129,10 @@ const ProjectsWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   background: black;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
 `;
 
 const HeadingWrapper = styled.div`
@@ -317,6 +324,7 @@ const Main = () => {
         </ProjectsWrapper>
       </ProjectsSection>
       <Bio />
+      <Contact />
     </MainWrapper>
   );
 };
