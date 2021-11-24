@@ -121,6 +121,7 @@ const ProjectsSection = styled.section`
   width: 100%;
   background: black;
   height: 100%;
+  margin-bottom: 5em;
 `;
 
 const ProjectsWrapper = styled.div`

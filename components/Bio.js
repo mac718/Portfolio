@@ -12,6 +12,9 @@ const BioWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 5em;
+  font-size: 1.25em;
+  line-height: 1.5;
 `;
 
 const ImageWrapper = styled.div`
@@ -37,16 +40,29 @@ const BioText = styled.div`
 
 const Bio = () => {
   return (
-    <BioWrapper>
+    <BioWrapper id="about">
       <BioHeading>About</BioHeading>
       <ImageWrapper>
         <Image src={profile} />
       </ImageWrapper>
       <BioText>
-        Exercitation voluptate occaecat non deserunt amet eu nulla magna est
-        laborum labore nisi magna do. Anim est et nisi eiusmod do id. Nisi
-        proident id fugiat est esse consequat magna tempor sunt minim aliqua.
-        Nulla labore ad ipsum id enim.
+        My current home is Portland, OR, but I was born and rasied in Brooklyn,
+        NY. In college (NYU), I considered majoring in math, but opted for
+        Classics with a math minor instead, as I had always been a "humanitites
+        person" and was more comfortable in that context. I went on to
+        posbaccalaureate study at Columbia, followed by four years of graduate
+        study at CUNY, Graduate Center, after which I left the program. While in
+        graduate school, I started a handmade soap business on the side to
+        generate extra income. After relinquishing academia, I focused my
+        attention on my business full-time, which I've been immersed in ever
+        since. It's been an interesting and largely fulfilling journey as a
+        small-time entrepneur, but I've long missed the intellectual rigor of
+        graduate study. When I tried some free Code Academy courses on a lark a
+        few years ago, I was immediately hooked. Since then, I've been spending
+        every spare moment schooling myself in the ways of modern web
+        development. I truly love the process of solving the myriad challenges
+        involved in bringing the kernel of an idea to concrete fruition in the
+        form of a web application. I've feel I've finally found my vocation.
       </BioText>
     </BioWrapper>
   );

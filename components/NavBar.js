@@ -102,8 +102,12 @@ const NavBar = () => {
           <a href="#projects">Projects</a>
         </NavItem>
 
-        <NavItem>About</NavItem>
-        <NavItem>Contact</NavItem>
+        <NavItem>
+          <a href="#about">About</a>
+        </NavItem>
+        <NavItem>
+          <a href="#contact">Contact</a>
+        </NavItem>
       </SectionsWrapper>
       <SocialWrapper>
         <NavItem>

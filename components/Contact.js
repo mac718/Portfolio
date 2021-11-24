@@ -59,7 +59,7 @@ const ContactForm = styled.form`
   border: 1px solid white;
   border-radius: 1em;
   height: 90%;
-  @media (max-width: 500px) {
+  @media (max-width: 876px) {
     margin: 1em;
   }
 `;
@@ -127,14 +127,14 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const setName = (e) => {
+  const handleNameChange = (e) => {
     setName(e.target.value);
     console.log(name);
   };
-  const setEmail = (e) => {
+  const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
-  const setMessage = (e) => {
+  const handleMessageChange = (e) => {
     setMessage(e.target.value);
   };
 
@@ -160,7 +160,7 @@ const Contact = () => {
   };
 
   return (
-    <>
+    <div id="contact">
       <ContactFormHeading>Contact</ContactFormHeading>
       <ContactSection>
         <Info>
@@ -186,7 +186,12 @@ const Contact = () => {
         <ContactForm netlify onSubmit={handleSubmit}>
           <ComboWrapper>
             <InputLabel htmlFor="Name">Name</InputLabel>
-            <Input type="text" name="Name" id="Name" onChange={setName} />
+            <Input
+              type="text"
+              name="Name"
+              id="Name"
+              onChange={handleNameChange}
+            />
           </ComboWrapper>
           <ComboWrapper>
             <InputLabel htmlFor="Email">Email</InputLabel>
@@ -194,7 +199,7 @@ const Contact = () => {
               type="email"
               name="Email"
               id="Email"
-              onChange={setEmail}
+              onChange={handleEmailChange}
               required
             />
           </ComboWrapper>
@@ -203,14 +208,14 @@ const Contact = () => {
             <TextArea
               name="Message"
               id="Message"
-              onChange={setMessage}
+              onChange={handleMessageChange}
               required
             />
           </ComboWrapper>
           <Submit type="submit">Send Message</Submit>
         </ContactForm>
       </ContactSection>
-    </>
+    </div>
   );
 };
 
