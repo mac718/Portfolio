@@ -12,7 +12,7 @@ const ContactSection = styled.section`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1;
-  @media (max-width: 500px) {
+  @media (max-width: 876px) {
     display: flex;
     flex-direction: column;
     padding: 1em;

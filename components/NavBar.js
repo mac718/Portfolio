@@ -51,7 +51,7 @@ const SectionsWrapper = styled.div`
   display: flex;
   width: 33%;
   justify-content: space-between;
-  @media (max-width: 500px) {
+  @media (max-width: 850px) {
     flex-direction: column;
   }
 `;
@@ -60,7 +60,7 @@ const SocialWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   width: 33%;
-  @media (max-width: 500px) {
+  @media (max-width: 850px) {
     flex-direction: column;
     align-items: flex-end;
   }

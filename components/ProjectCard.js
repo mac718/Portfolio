@@ -5,7 +5,7 @@ const ProjectCard = styled.div`
   width: 50%;
   margin: 1em;
   position: relative;
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     width: 90%;
   }
 `;
