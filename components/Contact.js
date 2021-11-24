@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
-import InputCombo from "./InputCombo";
 import { useState } from "react";
 
 const ContactSection = styled.section`
@@ -90,21 +89,76 @@ const Submit = styled.button`
   }
 `;
 
+const Input = styled.input`
+  background: black;
+  border: 1px solid white;
+  width: 80%;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  height: 2.5em;
+`;
+
+const TextArea = styled.textarea`
+  background: black;
+  border: 1px solid white;
+  width: 80%;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  height: 10em;
+`;
+
+const InputLabel = styled.label`
+  color: white;
+  text-align: left;
+  margin-bottom: 1em;
+  display: block;
+  width: 80%;
+  margin: 0 auto 1em auto;
+`;
+
+const ComboWrapper = styled.div`
+  width: 100%;
+  margin: 0 auto 1.5em auto;
+  text-align: center;
+`;
+
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const getName = (name) => {
-    setName(name);
+  const setName = (e) => {
+    setName(e.target.value);
     console.log(name);
   };
-  const getEmail = (email) => {
-    setEmail(email);
+  const setEmail = (e) => {
+    setEmail(e.target.value);
   };
-  const getMessage = (message) => {
-    setMessage(message);
+  const setMessage = (e) => {
+    setMessage(e.target.value);
   };
+
+  const encode = (data) => {
+    return Object.keys(data)
+      .map((key) => {
+        return encodeURIComponent(key) + "=" + encodeURIComponent(data[key]);
+      })
+      .join("&");
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch("/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: encode({ "form-name": "contact", name, email, message }),
+    })
+      .then(() => alert("Message Sent!"))
+      .catch((err) => alert(err));
+  };
+
   return (
     <>
       <ContactFormHeading>Contact</ContactFormHeading>
@@ -129,29 +183,31 @@ const Contact = () => {
             </Detail>
           </DetailsList>
         </Info>
-        <ContactForm>
-          <InputCombo
-            label="Name"
-            type="text"
-            area={false}
-            required={false}
-            stateFn={getName}
-          />
-          <InputCombo
-            label="Email"
-            type="email"
-            area={false}
-            required={true}
-            stateFn={getEmail}
-          />
-          <InputCombo
-            label="Message"
-            type="text"
-            area={true}
-            required={true}
-            stateFn={getMessage}
-          />
-          <Submit>Send Message</Submit>
+        <ContactForm netlify onSubmit={handleSubmit}>
+          <ComboWrapper>
+            <InputLabel htmlFor="Name">Name</InputLabel>
+            <Input type="text" name="Name" id="Name" onChange={setName} />
+          </ComboWrapper>
+          <ComboWrapper>
+            <InputLabel htmlFor="Email">Email</InputLabel>
+            <Input
+              type="email"
+              name="Email"
+              id="Email"
+              onChange={setEmail}
+              required
+            />
+          </ComboWrapper>
+          <ComboWrapper>
+            <InputLabel htmlFor="Message">Message</InputLabel>
+            <TextArea
+              name="Message"
+              id="Message"
+              onChange={setMessage}
+              required
+            />
+          </ComboWrapper>
+          <Submit type="submit">Send Message</Submit>
         </ContactForm>
       </ContactSection>
     </>

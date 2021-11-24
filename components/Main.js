@@ -120,7 +120,7 @@ const SubSubHeading = styled.div`
 const ProjectsSection = styled.section`
   width: 100%;
   background: black;
-  height: 100vh;
+  height: 100%;
 `;
 
 const ProjectsWrapper = styled.div`

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const ProjectCard = styled.div`
   background: black;
-  width: 40%;
+  width: 50%;
   margin: 1em;
   position: relative;
   @media (max-width: 500px) {
