@@ -324,7 +324,9 @@ const Main = () => {
           })}
         </ProjectsWrapper>
       </ProjectsSection>
+      <ClearanceDiv id="about" />
       <Bio />
+      <ClearanceDiv id="contact" />
       <Contact />
     </MainWrapper>
   );

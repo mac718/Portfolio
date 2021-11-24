@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
 import { useState } from "react";
+import SocialIcons from "./SocialIcons";
 
 const ContactSection = styled.section`
   height: 100%;
@@ -160,7 +161,7 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact">
+    <div>
       <ContactFormHeading>Contact</ContactFormHeading>
       <ContactSection>
         <Info>
@@ -182,6 +183,7 @@ const Contact = () => {
               <DetailSpan>Portland (Cedar Hills), OR</DetailSpan>
             </Detail>
           </DetailsList>
+          <SocialIcons />
         </Info>
         <ContactForm netlify onSubmit={handleSubmit}>
           <ComboWrapper>

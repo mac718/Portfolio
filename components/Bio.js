@@ -40,7 +40,7 @@ const BioText = styled.div`
 
 const Bio = () => {
   return (
-    <BioWrapper id="about">
+    <BioWrapper>
       <BioHeading>About</BioHeading>
       <ImageWrapper>
         <Image src={profile} />
