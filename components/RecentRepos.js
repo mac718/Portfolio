@@ -51,27 +51,29 @@ const ArrowSpan = styled.span`
 
 const RecentRepos = () => {
   const [repos, setRepos] = useState([]);
-  // useEffect(() => {
-  //   fetch("https://api.github.com/users/mac718/repos?sort=updated", {
-  //     headers: {
-  //       Authorization: `token ${process.env.PAT}`,
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((json) => setRepos(json.slice(0, 5)))
-  //     .catch((err) => console.log(err));
-  // }, []);
+  useEffect(() => {
+    fetch("https://api.github.com/users/mac718/repos?sort=updated", {
+      headers: {
+        Authorization: `token ${process.env.NEXT_PUBLIC_PAT}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((json) => setRepos(json.slice(0, 6)))
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <RecentReposSection>
-      {[1, 2, 3, 4].map((repo) => (
+      {repos.map((repo) => (
         <RepoCard>
-          <Title>{repo.name}Hi:</Title>
+          <Title>{repo.name}:</Title>
           <Description>{repo.description}Derka derka</Description>
           <RepoLink>
-            View Repository{" "}
-            <ArrowSpan>
-              <MdEast />
-            </ArrowSpan>
+            <a href={repo.html_url}>
+              View Repository{" "}
+              <ArrowSpan>
+                <MdEast />
+              </ArrowSpan>
+            </a>
           </RepoLink>
         </RepoCard>
       ))}
