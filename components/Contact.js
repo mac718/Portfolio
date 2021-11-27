@@ -21,7 +21,12 @@ const ContactSection = styled.section`
   }
 `;
 
-const Info = styled.div``;
+const Info = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90%;
+`;
 
 const InfoHeading = styled.div`
   font-size: 2em;
@@ -165,10 +170,12 @@ const Contact = () => {
       <ContactFormHeading>Contact</ContactFormHeading>
       <ContactSection>
         <Info>
-          <InfoHeading>Let's Talk!</InfoHeading>
-          <InfoSubheading>
-            Fill in the details and I'll get back to you as soon as possible.
-          </InfoSubheading>
+          <div>
+            <InfoHeading>Let's Talk!</InfoHeading>
+            <InfoSubheading>
+              Fill in the details and I'll get back to you as soon as possible.
+            </InfoSubheading>
+          </div>
           <DetailsList>
             <Detail>
               <MdEmail />

@@ -18,6 +18,7 @@ const MainWrapper = styled.div`
   flex-direction: column;
   margin: 0;
   border-right: 0;
+  scroll-snap-align: top;
 `;
 
 const Hero = styled.div`
@@ -36,7 +37,7 @@ const ClearanceDiv = styled.div`
   margin-bottom: 5em;
 `;
 
-const ProjectsButton = styled.button`
+const SectionButton = styled.button`
   width: 8em;
   height: 4em;
   border: 1px solid white;
@@ -45,9 +46,13 @@ const ProjectsButton = styled.button`
   color: white;
   font-family: "Courier New", Courier, monospace;
   cursor: pointer;
+  &:hover {
+    background: white;
+    color: black;
+  }
 `;
 
-const ProjectsButtonAnchor = styled.a`
+const SectionButtonAnchor = styled.a`
   opacity: 0;
   animation: ${(props) =>
     props.animate &&
@@ -122,6 +127,7 @@ const ProjectsSection = styled.section`
   background: black;
   height: 100%;
   margin-bottom: 5em;
+  text-align: center;
 `;
 
 const ProjectsWrapper = styled.div`
@@ -180,40 +186,6 @@ const ProjectCardCoverWrapper = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 4em;
-`;
-
-const ProjectCardCoverGitButton = styled.button`
-  width: 8em;
-  height: 4em;
-  border: 1px solid white;
-  border-radius: 1em;
-  background: transparent;
-  color: white;
-  font-family: "Courier New", Courier, monospace;
-  cursor: pointer;
-  margin: 1em;
-
-  &:hover {
-    border: 1px solid orange;
-    color: orange;
-  }
-`;
-
-const ProjectCardCoverLiveButton = styled.button`
-  width: 8em;
-  height: 4em;
-  border: 1px solid white;
-  border-radius: 1em;
-  background: transparent;
-  color: white;
-  font-family: "Courier New", Courier, monospace;
-  cursor: pointer;
-  margin: 1em;
-
-  &:hover {
-    border: 1px solid lightGreen;
-    color: green;
-  }
 `;
 
 const typing = keyframes`
@@ -287,9 +259,9 @@ const Main = () => {
           I create awesome apps with JavaScript.
         </SubSubHeading>
 
-        <ProjectsButtonAnchor href="#projects" animate={animateAnchor}>
-          <ProjectsButton>Projects</ProjectsButton>
-        </ProjectsButtonAnchor>
+        <SectionButtonAnchor href="#projects" animate={animateAnchor}>
+          <SectionButton>Projects</SectionButton>
+        </SectionButtonAnchor>
       </Hero>
       <ClearanceDiv id="projects" />
       <ProjectsSection>
@@ -323,8 +295,10 @@ const Main = () => {
             );
           })}
         </ProjectsWrapper>
+        <SectionButton>About</SectionButton>
       </ProjectsSection>
       <ClearanceDiv id="about" />
+      <RecentRepos />
       <Bio />
       <ClearanceDiv id="contact" />
       <Contact />

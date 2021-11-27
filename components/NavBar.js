@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import styled, { keyframes, css } from "styled-components";
 import { FaLinkedin, FaMedium, FaTwitter } from "react-icons/fa";
+import { MdArrowUpward } from "react-icons/md";
 
 const transitionBg = keyframes`
   from {
@@ -96,12 +97,15 @@ const NavBar = () => {
     <Nav id="nav" ref={nav} backgroundTransition={backgroundTransition}>
       <TopWrapper>
         <a href="#top">Top</a>
+        <MdArrowUpward />
       </TopWrapper>
       <SectionsWrapper backgroundTransition={backgroundTransition}>
         <NavItem>
           <a href="#projects">Projects</a>
         </NavItem>
-
+        <NavItem>
+          <a href="#about">Repos</a>
+        </NavItem>
         <NavItem>
           <a href="#about">About</a>
         </NavItem>
