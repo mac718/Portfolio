@@ -222,7 +222,7 @@ const ScreenIconWrapper = styled.span`
   }
 `;
 
-const Main = () => {
+const Main = ({ repos }) => {
   const [animateHeading, setAnimateHeading] = useState(false);
   const [animateSubheading, setAnimateSubheading] = useState(false);
   const [animateCover, setAnimateCover] = useState(false);
@@ -252,7 +252,7 @@ const Main = () => {
         </HeadingWrapper>
         <HeadingWrapper>
           <SubHeading hidden={hidden} animate={animateSubheading}>
-            Full Stack Developer
+            Full-stack Developer
           </SubHeading>
         </HeadingWrapper>
         <SubSubHeading animate={animateSubSubheading}>
@@ -297,8 +297,9 @@ const Main = () => {
         </ProjectsWrapper>
         <SectionButton>About</SectionButton>
       </ProjectsSection>
+      <ClearanceDiv id="repos" />
+      <RecentRepos repos={repos} />
       <ClearanceDiv id="about" />
-      <RecentRepos />
       <Bio />
       <ClearanceDiv id="contact" />
       <Contact />

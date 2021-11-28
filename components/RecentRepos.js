@@ -6,6 +6,16 @@ import { FaArrowRight } from "react-icons/fa";
 const RecentReposSection = styled.section`
   width: 90%;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+`;
+
+const ReposWrapper = styled.section`
+  width: 90%;
+  height: 100vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -42,6 +52,10 @@ const RepoLink = styled.div`
   display: inherit;
 `;
 
+const RepoLinkAnchor = styled.a`
+  display: inherit;
+`;
+
 const ArrowSpan = styled.span`
   display: flex;
   align-items: center;
@@ -49,34 +63,45 @@ const ArrowSpan = styled.span`
   margin-left: 0.5rem;
 `;
 
-const RecentRepos = () => {
-  const [repos, setRepos] = useState([]);
-  useEffect(() => {
-    fetch("https://api.github.com/users/mac718/repos?sort=updated", {
-      headers: {
-        Authorization: `token ${process.env.NEXT_PUBLIC_PAT}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((json) => setRepos(json.slice(0, 6)))
-      .catch((err) => console.log(err));
-  }, []);
+const RecentReposHeading = styled.div`
+  color: white;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 3em;
+  margin-bottom: 1em;
+`;
+
+const RecentRepos = ({ repos }) => {
+  //const [repos, setRepos] = useState([]);
+  // useEffect(() => {
+  //   fetch("https://api.github.com/users/mac718/repos?sort=updated", {
+  //     headers: {
+  //       Authorization: `token ${process.env.NEXT_PUBLIC_PAT}`,
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((json) => setRepos(json.slice(0, 6)))
+  //     .catch((err) => console.log(err));
+  // }, []);
   return (
     <RecentReposSection>
-      {repos.map((repo) => (
-        <RepoCard>
-          <Title>{repo.name}:</Title>
-          <Description>{repo.description}Derka derka</Description>
-          <RepoLink>
-            <a href={repo.html_url}>
-              View Repository{" "}
-              <ArrowSpan>
-                <MdEast />
-              </ArrowSpan>
-            </a>
-          </RepoLink>
-        </RepoCard>
-      ))}
+      <RecentReposHeading>Recent Repos</RecentReposHeading>
+      <ReposWrapper>
+        {repos.map((repo) => (
+          <RepoCard>
+            <Title>{repo.name}:</Title>
+            <Description>{repo.description}Derka derka</Description>
+            <RepoLink>
+              <RepoLinkAnchor href={repo.html_url}>
+                View Repository{" "}
+                <ArrowSpan>
+                  <MdEast />
+                </ArrowSpan>
+              </RepoLinkAnchor>
+            </RepoLink>
+          </RepoCard>
+        ))}
+      </ReposWrapper>
     </RecentReposSection>
   );
 };
