@@ -3,7 +3,6 @@ import styled, { keyframes, css } from "styled-components";
 import Bio from "./Bio";
 import NavBar from "./NavBar";
 import Projects from "./Projects";
-
 import RecentRepos from "./RecentRepos";
 import Contact from "./Contact";
 
@@ -178,7 +177,6 @@ const Main = ({ repos }) => {
         <SubSubHeading animate={animateSubSubheading}>
           I create awesome apps with JavaScript.
         </SubSubHeading>
-
         <SectionButtonAnchor href="#projects" animate={animateAnchor}>
           <SectionButton>Projects</SectionButton>
         </SectionButtonAnchor>

@@ -104,7 +104,7 @@ const NavBar = () => {
           <a href="#projects">Projects</a>
         </NavItem>
         <NavItem>
-          <a href="#about">Repos</a>
+          <a href="#repos">Repos</a>
         </NavItem>
         <NavItem>
           <a href="#about">About</a>

@@ -135,7 +135,6 @@ const Contact = () => {
 
   const handleNameChange = (e) => {
     setName(e.target.value);
-    console.log(name);
   };
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
