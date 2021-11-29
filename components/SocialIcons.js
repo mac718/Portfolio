@@ -22,18 +22,23 @@ const SocialIcons = () => {
         <a
           href="https://www.linkedin.com/in/mike-coon-a1001014a"
           target="_blank"
+          rel="noreferrer"
         >
           <FaLinkedin />
         </a>
       </NavItem>
 
       <NavItem>
-        <a href="https://twitter.com/MikeCoon718" target="_blank">
+        <a
+          href="https://twitter.com/MikeCoon718"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FaTwitter />
         </a>
       </NavItem>
       <NavItem>
-        <a href="https://medium.com/@mac718" target="_blank">
+        <a href="https://medium.com/@mac718" target="_blank" rel="noreferrer">
           <FaMedium />
         </a>
       </NavItem>

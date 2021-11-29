@@ -170,9 +170,10 @@ const Contact = () => {
       <ContactSection>
         <Info>
           <div>
-            <InfoHeading>Let's Talk!</InfoHeading>
+            <InfoHeading>Let&apos;s Talk!</InfoHeading>
             <InfoSubheading>
-              Fill in the details and I'll get back to you as soon as possible.
+              Fill in the details and I&apos;ll get back to you as soon as
+              possible.
             </InfoSubheading>
           </div>
           <DetailsList>

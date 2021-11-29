@@ -88,7 +88,7 @@ const RecentRepos = ({ repos }) => {
       <RecentReposHeading>Recent Repos</RecentReposHeading>
       <ReposWrapper>
         {repos.map((repo) => (
-          <RepoCard>
+          <RepoCard key={repo.name}>
             <Title>{repo.name}:</Title>
             <Description>{repo.description}Derka derka</Description>
             <RepoLink>
