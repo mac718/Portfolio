@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
 import { useState } from "react";
 import SocialIcons from "./SocialIcons";
+import axios from "axios";
 
 const ContactSection = styled.section`
   height: 100%;
@@ -128,10 +129,25 @@ const ComboWrapper = styled.div`
   text-align: center;
 `;
 
+const ErrorMessage = styled.div`
+  color: red;
+  font-weight: bold;
+`;
+
+const SuccessMessage = styled.div`
+  color: lightGreen;
+  font-weight: bold;
+`;
+
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState({
+    submitted: false,
+    submitting: false,
+    info: { error: false, msg: null },
+  });
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -143,25 +159,34 @@ const Contact = () => {
     setMessage(e.target.value);
   };
 
-  const encode = (data) => {
-    return Object.keys(data)
-      .map((key) => {
-        return encodeURIComponent(key) + "=" + encodeURIComponent(data[key]);
-      })
-      .join("&");
+  const handleServerResponse = (ok, msg) => {
+    if (ok) {
+      setStatus({
+        submitted: true,
+        submitting: false,
+        info: { error: false, msg: msg },
+      });
+      setName("");
+      setEmail("");
+      setMessage("");
+    } else {
+      setStatus({
+        info: { error: true, msg: msg },
+      });
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("/", {
+    axios({
       method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: encode({ "form-name": "contact", name, email, message }),
+      url: "https://formspree.io/f/xgedwzvg",
+      data: { name, email, message },
     })
-      .then(() => alert("Message Sent!"))
-      .catch((err) => alert(err));
+      .then((res) => {
+        handleServerResponse(true, "Thanks!, Your message has been submitted.");
+      })
+      .catch((error) => handleServerResponse(false, error.response.data.error));
   };
 
   return (
@@ -200,6 +225,7 @@ const Contact = () => {
               name="Name"
               id="Name"
               onChange={handleNameChange}
+              value={name}
             />
           </ComboWrapper>
           <ComboWrapper>
@@ -209,6 +235,7 @@ const Contact = () => {
               name="Email"
               id="Email"
               onChange={handleEmailChange}
+              value={email}
               required
             />
           </ComboWrapper>
@@ -218,10 +245,17 @@ const Contact = () => {
               name="Message"
               id="Message"
               onChange={handleMessageChange}
+              value={message}
               required
             />
           </ComboWrapper>
           <Submit type="submit">Send Message</Submit>
+          {status.info.error && (
+            <ErrorMessage>Error: {status.info.msg}</ErrorMessage>
+          )}
+          {!status.info.error && status.info.msg && (
+            <SuccessMessage>{status.info.msg}</SuccessMessage>
+          )}
         </ContactForm>
       </ContactSection>
     </div>

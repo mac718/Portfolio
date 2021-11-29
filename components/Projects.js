@@ -113,13 +113,13 @@ const Projects = () => {
                 onMouseLeave={() => setAnimateCover(false)}
               >
                 <ProjectCardCoverWrapper>
-                  <a href={project.codeLink} target="_blank">
+                  <a href={project.codeLink} target="_blank" rel="noreferrer">
                     <GitHubIconWrapper>
                       <GoMarkGithub />
                     </GitHubIconWrapper>
                     |
                   </a>
-                  <a href={project.liveLink} target="_blank">
+                  <a href={project.liveLink} target="_blank" rel="noreferrer">
                     <ScreenIconWrapper>
                       <MdScreenShare />
                     </ScreenIconWrapper>
