@@ -21,6 +21,16 @@ const ReposWrapper = styled.section`
   grid-template-rows: repeat(2, 1fr);
   grid-gap: 10px 10px;
   margin: auto;
+  margin-bottom: 3rem;
+  @media (max-width: 1300px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  @media (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const RepoCard = styled.div`
@@ -71,18 +81,22 @@ const RecentReposHeading = styled.div`
   margin-bottom: 1em;
 `;
 
+const SectionButton = styled.button`
+  width: 8em;
+  height: 4em;
+  border: 1px solid white;
+  border-radius: 1em;
+  background: transparent;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  cursor: pointer;
+  &:hover {
+    background: white;
+    color: black;
+  }
+`;
+
 const RecentRepos = ({ repos }) => {
-  //const [repos, setRepos] = useState([]);
-  // useEffect(() => {
-  //   fetch("https://api.github.com/users/mac718/repos?sort=updated", {
-  //     headers: {
-  //       Authorization: `token ${process.env.NEXT_PUBLIC_PAT}`,
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((json) => setRepos(json.slice(0, 6)))
-  //     .catch((err) => console.log(err));
-  // }, []);
   return (
     <RecentReposSection>
       <RecentReposHeading>Recent Repos</RecentReposHeading>
@@ -90,7 +104,7 @@ const RecentRepos = ({ repos }) => {
         {repos.map((repo) => (
           <RepoCard key={repo.name}>
             <Title>{repo.name}:</Title>
-            <Description>{repo.description}Derka derka</Description>
+            <Description>{repo.description}</Description>
             <RepoLink>
               <RepoLinkAnchor href={repo.html_url}>
                 View Repository{" "}
@@ -102,6 +116,9 @@ const RecentRepos = ({ repos }) => {
           </RepoCard>
         ))}
       </ReposWrapper>
+      <a href="#about">
+        <SectionButton>About</SectionButton>
+      </a>
     </RecentReposSection>
   );
 };
