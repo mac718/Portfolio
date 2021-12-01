@@ -208,7 +208,7 @@ const Contact = () => {
             </Detail>
             <Detail>
               <MdPhone />
-              <DetailSpan>347-269-1741</DetailSpan>
+              <DetailSpan>347-268-1741</DetailSpan>
             </Detail>
             <Detail>
               <MdLocationOn />

@@ -50,20 +50,20 @@ const Bio = () => {
         NY. In college (NYU), I considered majoring in math, but opted for
         Classics with a math minor instead, as I had always been a
         &ldquo;humanitites person&ldquo; and was more comfortable in that
-        context. I went on to posbaccalaureate study at Columbia, followed by
+        context. I went on to postbaccalaureate study at Columbia, followed by
         four years of graduate study at CUNY, Graduate Center, after which I
         left the program. While in graduate school, I started a handmade soap
         business on the side to generate extra income. After relinquishing
         academia, I focused my attention on my business full-time, which
         I&apos;ve been immersed in ever since. It&apos;s been an interesting and
-        largely fulfilling journey as a small-time entrepneur, but I&apos;ve
+        largely fulfilling journey as a small-time entrepreneur, but I&apos;ve
         long missed the intellectual rigor of graduate study. When I tried some
         free Code Academy courses on a lark a few years ago, I was immediately
         hooked. Since then, I&apos;ve been spending every spare moment schooling
         myself in the ways of modern web development. I truly love the process
         of solving the myriad challenges involved in bringing the kernel of an
-        idea to concrete fruition in the form of a web application. I&apos;ve
-        feel I&apos;ve finally found my vocation.
+        idea to concrete fruition in the form of a web application. I feel
+        I&apos;ve finally found my vocation.
       </BioText>
     </BioWrapper>
   );

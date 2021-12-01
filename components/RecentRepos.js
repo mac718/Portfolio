@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { MdEast } from "react-icons/md";
-import { FaArrowRight } from "react-icons/fa";
+import SectionButton from "./SectionButton";
 
 const RecentReposSection = styled.section`
   width: 90%;
@@ -11,6 +10,9 @@ const RecentReposSection = styled.section`
   justify-content: center;
   align-items: center;
   margin: auto;
+  @media (max-width: 1000px) {
+    height: 100%;
+  }
 `;
 
 const ReposWrapper = styled.section`
@@ -30,6 +32,8 @@ const ReposWrapper = styled.section`
   @media (max-width: 1000px) {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    overflow-x: wrap;
   }
 `;
 
@@ -46,6 +50,7 @@ const Title = styled.div`
   font-weight: bold;
   color: white;
   font-size: 1.755em;
+  overflow-wrap: anywhere;
 `;
 
 const Description = styled.div`
@@ -79,21 +84,6 @@ const RecentReposHeading = styled.div`
   font-family: "Courier New", Courier, monospace;
   font-size: 3em;
   margin-bottom: 1em;
-`;
-
-const SectionButton = styled.button`
-  width: 8em;
-  height: 4em;
-  border: 1px solid white;
-  border-radius: 1em;
-  background: transparent;
-  color: white;
-  font-family: "Courier New", Courier, monospace;
-  cursor: pointer;
-  &:hover {
-    background: white;
-    color: black;
-  }
 `;
 
 const RecentRepos = ({ repos }) => {

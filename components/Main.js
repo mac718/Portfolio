@@ -5,6 +5,7 @@ import NavBar from "./NavBar";
 import Projects from "./Projects";
 import RecentRepos from "./RecentRepos";
 import Contact from "./Contact";
+import SectionButton from "./SectionButton";
 
 const MainWrapper = styled.div`
   background: black;
@@ -31,21 +32,6 @@ const Hero = styled.div`
 
 const ClearanceDiv = styled.div`
   margin-bottom: 5em;
-`;
-
-const SectionButton = styled.button`
-  width: 8em;
-  height: 4em;
-  border: 1px solid white;
-  border-radius: 1em;
-  background: transparent;
-  color: white;
-  font-family: "Courier New", Courier, monospace;
-  cursor: pointer;
-  &:hover {
-    background: white;
-    color: black;
-  }
 `;
 
 const SectionButtonAnchor = styled.a`
