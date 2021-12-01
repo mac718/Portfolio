@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { MdEast } from "react-icons/md";
-import SectionButton from "./SectionButton";
 
 const RecentReposSection = styled.section`
   width: 90%;
@@ -106,9 +105,6 @@ const RecentRepos = ({ repos }) => {
           </RepoCard>
         ))}
       </ReposWrapper>
-      <a href="#about">
-        <SectionButton>About</SectionButton>
-      </a>
     </RecentReposSection>
   );
 };

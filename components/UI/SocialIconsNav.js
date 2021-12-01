@@ -15,7 +15,7 @@ const NavItem = styled.div`
   margin: 0 0.5em 0 0.5em;
 `;
 
-const SocialIcons = () => {
+const SocialIconsNav = () => {
   return (
     <SocialWrapper>
       <NavItem>
@@ -46,4 +46,4 @@ const SocialIcons = () => {
   );
 };
 
-export default SocialIcons;
+export default SocialIconsNav;

@@ -1,11 +1,11 @@
-import { useEffect, useState, useLayoutEffect } from "react";
+import { useEffect, useState } from "react";
 import styled, { keyframes, css } from "styled-components";
 import Bio from "./Bio";
 import NavBar from "./NavBar";
 import Projects from "./Projects";
 import RecentRepos from "./RecentRepos";
 import Contact from "./Contact";
-import SectionButton from "./SectionButton";
+import SectionButton from "./UI/SectionButton";
 
 const MainWrapper = styled.div`
   background: black;

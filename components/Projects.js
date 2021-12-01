@@ -2,25 +2,10 @@ import { useState } from "react";
 import styled, { keyframes, css } from "styled-components";
 import { GoMarkGithub } from "react-icons/go";
 import { MdScreenShare } from "react-icons/md";
-import ProjectCard from "./ProjectCard";
+import ProjectCard from "./UI/ProjectCard";
 import Image from "next/image";
 import { projects } from "../data";
-import SectionButton from "./SectionButton";
-
-// const SectionButton = styled.button`
-//   width: 8em;
-//   height: 4em;
-//   border: 1px solid white;
-//   border-radius: 1em;
-//   background: transparent;
-//   color: white;
-//   font-family: "Courier New", Courier, monospace;
-//   cursor: pointer;
-//   &:hover {
-//     background: white;
-//     color: black;
-//   }
-//`;
+import SectionButton from "./UI/SectionButton";
 
 const ProjectsSection = styled.section`
   width: 100%;

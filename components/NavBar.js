@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import styled, { keyframes, css } from "styled-components";
 import { FaLinkedin, FaMedium, FaTwitter } from "react-icons/fa";
 import { MdArrowUpward } from "react-icons/md";
+import SocialIconsNav from "./UI/SocialIconsNav";
 
 const transitionBg = keyframes`
   from {
@@ -113,32 +114,7 @@ const NavBar = () => {
           <a href="#contact">Contact</a>
         </NavItem>
       </SectionsWrapper>
-      <SocialWrapper>
-        <NavItem>
-          <a
-            href="https://www.linkedin.com/in/mike-coon-a1001014a"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaLinkedin />
-          </a>
-        </NavItem>
-
-        <NavItem>
-          <a
-            href="https://twitter.com/MikeCoon718"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaTwitter />
-          </a>
-        </NavItem>
-        <NavItem>
-          <a href="https://medium.com/@mac718" target="_blank" rel="noreferrer">
-            <FaMedium />
-          </a>
-        </NavItem>
-      </SocialWrapper>
+      <SocialIconsNav />
     </Nav>
   );
 };

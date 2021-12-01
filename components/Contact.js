@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
 import { useState } from "react";
-import SocialIcons from "./SocialIcons";
+import SocialIcons from "./UI/SocialIconsNav";
 import axios from "axios";
 
 const ContactSection = styled.section`
