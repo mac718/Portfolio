@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
 import { useState } from "react";
-import SocialIcons from "./UI/SocialIconsNav";
+import SocialIconsContact from "./UI/SocialIconsContact";
 import axios from "axios";
 
 const ContactSection = styled.section`
@@ -215,7 +215,7 @@ const Contact = () => {
               <DetailSpan>Portland (Cedar Hills), OR</DetailSpan>
             </Detail>
           </DetailsList>
-          <SocialIcons />
+          <SocialIconsContact />
         </Info>
         <ContactForm netlify onSubmit={handleSubmit}>
           <ComboWrapper>
