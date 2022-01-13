@@ -13,6 +13,6 @@ export const projects = [
     subtitle: "A Trello-like application built on the MERN stack.",
     image: djello,
     codeLink: "https://github.com/mac718/Djello",
-    liveLink: "https://intense-woodland-98650.herokuapp.com/",
+    liveLink: "https://djello1.herokuapp.com/",
   },
 ];

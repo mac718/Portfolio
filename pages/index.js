@@ -4,7 +4,6 @@ export default function Home({ repos }) {
 }
 
 export async function getServerSideProps(context) {
-  console.log("pat", process.env.NEXT_PUBLIC_PAT);
   let res = await fetch(
     "https://api.github.com/users/mac718/repos?sort=updated",
     {
