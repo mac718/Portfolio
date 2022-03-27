@@ -76,7 +76,7 @@ const TopWrapper = styled.div`
 const NavItem = styled.div`
   margin: 0 0.5em 0 0.5em;
 `;
-
+//comment
 const NavBar = () => {
   const [backgroundTransition, setBackgroundTransition] = useState(false);
   let nav = useRef(null);
