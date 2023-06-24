@@ -1,5 +1,6 @@
 import djello from "./public/Djello_screenshot.png";
 import nominfans from "./public/nominfans.png";
+import mns from "./public/mns.png";
 export const projects = [
   {
     name: "Nominfans",
@@ -14,5 +15,12 @@ export const projects = [
     image: djello,
     codeLink: "https://github.com/mac718/Djello",
     liveLink: "https://djello1.herokuapp.com/",
+  },
+  {
+    name: "Mike's Natural Soaps",
+    subtitle: "An e-commerce site for my small business built with NextJS",
+    image: mns,
+    codeLink: "https://github.com/mac718/mns",
+    liveLink: "https://mikesnaturalsoaps.com",
   },
 ];
