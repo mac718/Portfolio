@@ -58,12 +58,11 @@ const Bio = () => {
         I&apos;ve been immersed in ever since. It&apos;s been an interesting and
         largely fulfilling journey as a small-time entrepreneur, but I&apos;ve
         long missed the intellectual rigor of graduate study. When I tried some
-        free Code Academy courses on a lark a few years ago, I was immediately
+        free Codecademy courses on a lark a few years ago, I was immediately
         hooked. Since then, I&apos;ve been spending every spare moment schooling
         myself in the ways of modern web development. I truly love the process
         of solving the myriad challenges involved in bringing the kernel of an
-        idea to concrete fruition in the form of a web application. I feel
-        I&apos;ve finally found my vocation.
+        idea to concrete fruition in the form of a web application.
       </BioText>
     </BioWrapper>
   );
