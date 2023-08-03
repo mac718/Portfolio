@@ -32,7 +32,7 @@ const ReposWrapper = styled.section`
     display: flex;
     flex-direction: column;
     height: 100%;
-    overflow-x: wrap;
+    overflow-x: auto;
   }
 `;
 

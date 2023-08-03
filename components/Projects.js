@@ -28,7 +28,7 @@ const ProjectsWrapper = styled.div`
 `;
 
 const fadeIn = keyframes`
-  from: {
+  from {
     opacity: 0;
   }
   to {opacity: 0.9;}

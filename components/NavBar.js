@@ -24,7 +24,6 @@ const transitionBackBg = keyframes`
   to {
     color: white;
   }
-  
 `;
 
 const Nav = styled.nav`

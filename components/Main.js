@@ -5,7 +5,6 @@ import NavBar from "./NavBar";
 import Projects from "./Projects";
 import RecentRepos from "./RecentRepos";
 import Contact from "./Contact";
-import SectionButton from "./UI/SectionButton";
 
 const MainWrapper = styled.div`
   background: black;
@@ -93,6 +92,7 @@ const SubHeading = styled.div`
       ${typingSub} 3s steps(20, end),
       ${blinkCaretSub} 0.75s step-end infinite
     `};
+
   @media (max-width: 500px) {
     font-size: 1.75rem;
   }
