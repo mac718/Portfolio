@@ -15,7 +15,7 @@ const MainWrapper = styled.div`
   flex-direction: column;
   margin: 0;
   border-right: 0;
-  scroll-snap-align: top;
+  scroll-snap-align: start;
 `;
 
 const Hero = styled.div`
@@ -71,7 +71,7 @@ const SubHeading = styled.div`
   border-right: 0.6em solid orange; /*The typwriter cursor */
   white-space: nowrap; /*Keeps the content on a single line*/
   margin: 0 auto 1em 0; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: 0.2; /*Adjust as needed */
+  letter-spacing: 0.1em; /*Adjust as needed */
   animation: ${(props) =>
     props.animate &&
     css`
@@ -84,8 +84,8 @@ const SubHeading = styled.div`
 `;
 
 const fromBottom = keyframes`
-  from { opacity: 0}
-  to { opacity: 1}
+  from { opacity: 0;}
+  to { opacity: 1;}
 `;
 
 const SubSubHeading = styled.div`
@@ -109,23 +109,23 @@ const HeadingWrapper = styled.div`
 `;
 
 const typing = keyframes`
-  from { width: 0 }
-  to { width: 100% }
+  from { width: 0; }
+  to { width: 100%; }
 `;
 const blinkCaret = keyframes`
-  from, to { border-color: transparent }
-  50% { border-color: orange }
+  from, to { border-color: transparent; }
+  50% { border-color: orange; }
 
 `;
 
 const typingSub = keyframes`
-  from { width: 0 }
-  to { width: 100% }
+  from { width: 0; }
+  to { width: 100%; }
 `;
 
 const blinkCaretSub = keyframes`
-  from, to { border-color: transparent }
-  50% { border-color: orange }
+  from, to { border-color: transparent; }
+  50% { border-color: orange; }
 `;
 
 const Main = ({ repos }) => {

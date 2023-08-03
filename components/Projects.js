@@ -31,7 +31,7 @@ const fadeIn = keyframes`
   from: {
     opacity: 0;
   }
-  to {opacity: 0.9}
+  to {opacity: 0.9;}
 `;
 
 const ProjectCardCover = styled.div`
@@ -92,7 +92,7 @@ const Projects = () => {
         {projects.map((project) => {
           return (
             <ProjectCard key={project.name}>
-              <Image src={project.image} />
+              <Image src={project.image} alt="project image" />
               <ProjectCardCover
                 animateCover={animateCover}
                 onMouseOver={() => setAnimateCover(true)}
