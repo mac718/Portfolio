@@ -5,7 +5,7 @@ export default function Home({ repos }) {
 
 export async function getServerSideProps(context) {
   let res = await fetch(
-    "https://api.github.com/users/mac718/repos?sort=updated",
+    "https://api.github.com/users/mac718/repos?sort=pushed",
     {
       headers: {
         Authorization: `token ${process.env.NEXT_PUBLIC_PAT}`,
