@@ -35,6 +35,21 @@ const ClearanceDiv = styled.div`
 `;
 
 const SectionButtonAnchor = styled.a`
+  width: 8em;
+  height: 4em;
+  border: 1px solid white;
+  border-radius: 1em;
+  background: transparent;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    background: white;
+    color: black;
+  }
   opacity: 0;
   animation: ${(props) =>
     props.animate &&
@@ -164,7 +179,7 @@ const Main = ({ repos }) => {
           I create awesome apps with JavaScript.
         </SubSubHeading>
         <SectionButtonAnchor href="#projects" animate={animateAnchor}>
-          <SectionButton>Projects</SectionButton>
+          Projects
         </SectionButtonAnchor>
       </Hero>
       <ClearanceDiv id="projects" />

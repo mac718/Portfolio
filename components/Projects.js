@@ -117,9 +117,8 @@ const Projects = () => {
           );
         })}
       </ProjectsWrapper>
-      <a href="#repos">
-        <SectionButton>Recent Repos</SectionButton>
-      </a>
+
+      <SectionButton href="#repos">Recent Repos</SectionButton>
     </ProjectsSection>
   );
 };

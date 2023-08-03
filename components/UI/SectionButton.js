@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
-const Button = styled.button`
+const A = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 8em;
   height: 4em;
+  margin: auto;
   border: 1px solid white;
   border-radius: 1em;
   background: transparent;
@@ -16,7 +20,7 @@ const Button = styled.button`
 `;
 
 const SectionButton = (props) => {
-  return <Button>{props.children}</Button>;
+  return <A href={props.href}>{props.children}</A>;
 };
 
 export default SectionButton;
