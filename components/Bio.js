@@ -53,7 +53,7 @@ const Bio = () => {
         context. I went on to postbaccalaureate study at Columbia, followed by
         four years of graduate study at CUNY, Graduate Center, after which I
         left the program. While in graduate school, I started a handmade soap
-        bus iness on the side to generate extra income. After relinquishing
+        business on the side to generate extra income. After relinquishing
         academia, I focused my attention on my business full-time, which
         I&apos;ve been immersed in ever since. It&apos;s been an interesting and
         largely fulfilling journey as a small-time entrepreneur, but I&apos;ve

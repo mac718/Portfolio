@@ -31,13 +31,13 @@ const fadeIn = keyframes`
   from {
     opacity: 0;
   }
-  to {opacity: 0.9;}
+  to {opacity: 1;}
 `;
 
 const ProjectCardCover = styled.div`
   position: absolute;
-  opacity: 0;
-  background: black;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.45);
   width: 100%;
   height: 100%;
   top: 0;
@@ -48,11 +48,11 @@ const ProjectCardCover = styled.div`
   align-items: center;
   color: white;
   font-family: "Courier New", Courier, monospace;
-  &:hover {
+  /* &:hover {
     animation: ${css`
-      ${fadeIn} 0.5s forwards
-    `};
-  }
+    ${fadeIn} 0.5s forwards
+  `};
+  } */
 `;
 
 const ProjectCardCoverWrapper = styled.div`
@@ -103,7 +103,6 @@ const Projects = () => {
                     <GitHubIconWrapper>
                       <GoMarkGithub />
                     </GitHubIconWrapper>
-                    |
                   </a>
                   <a href={project.liveLink} target="_blank" rel="noreferrer">
                     <ScreenIconWrapper>
