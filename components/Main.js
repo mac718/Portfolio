@@ -94,7 +94,7 @@ const SubHeading = styled.div`
     `};
 
   @media (max-width: 500px) {
-    font-size: 1.75rem;
+    font-size: 1.55rem;
   }
 `;
 
