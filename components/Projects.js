@@ -6,6 +6,7 @@ import ProjectCard from "./UI/ProjectCard";
 import Image from "next/image";
 import { projects } from "../data";
 import SectionButton from "./UI/SectionButton";
+import Badge from "./UI/Badge";
 
 const ProjectsSection = styled.section`
   width: 100%;
@@ -24,6 +25,7 @@ const ProjectsWrapper = styled.div`
   padding: 1em;
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
   background: var(--black);
 
   @media (max-width: 1000px) {
@@ -42,7 +44,7 @@ const fadeIn = keyframes`
 
 const ProjectCardCover = styled.div`
   position: absolute;
-  opacity: 1;
+  opacity: 0;
   background-color: rgba(0, 0, 0, 0.45);
   width: 100%;
   height: 100%;
@@ -54,11 +56,16 @@ const ProjectCardCover = styled.div`
   align-items: center;
   color: var(--white);
   font-family: "Courier New", Courier, monospace;
-  /* &:hover {
+  &:hover {
     animation: ${css`
-    ${fadeIn} 0.5s forwards
-  `};
-  } */
+      ${fadeIn} 0.5s forwards
+    `};
+  }
+  @media (max-width: 1000px) {
+    opacity: 1;
+    &:hover {
+    }
+  }
 `;
 
 const ProjectCardCoverWrapper = styled.div`
@@ -113,6 +120,13 @@ const ToolTip = styled.div`
   }
 `;
 
+const BadgeWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+`;
+
 const Projects = () => {
   const [animateCover, setAnimateCover] = useState(false);
   return (
@@ -148,6 +162,11 @@ const Projects = () => {
                 </ProjectCardCoverWrapper>
                 <h2>{project.name}</h2>
                 <p>{project.subtitle}</p>
+                <BadgeWrapper>
+                  {project.technologies.map((tech) => (
+                    <Badge>{tech}</Badge>
+                  ))}
+                </BadgeWrapper>
               </ProjectCardCover>
             </ProjectCard>
           );

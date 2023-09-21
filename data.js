@@ -21,7 +21,13 @@ export const projects = [
   {
     name: "Mike's Natural Soaps",
     subtitle: "An e-commerce site for my small business built with NextJS",
-    technologies: ["Express", "React", "JWT", "Context API", "SendGrid"],
+    technologies: [
+      "Next.js",
+      "Context API",
+      "MongoDB",
+      "MongoDB Atlas",
+      "Paypal Smart Checkout SDK",
+    ],
     image: mns,
     codeLink: "https://github.com/mac718/mns",
     liveLink: "https://mikesnaturalsoaps.com",
