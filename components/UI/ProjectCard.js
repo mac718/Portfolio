@@ -5,7 +5,7 @@ const ProjectCard = styled.div`
   justify-content: center;
   align-items: center;
   width: 500px;
-  height: 300px;
+  height: 350px;
   margin: 1em;
   position: relative;
   background: gray;

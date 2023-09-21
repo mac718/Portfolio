@@ -164,7 +164,7 @@ const Projects = () => {
                 <p>{project.subtitle}</p>
                 <BadgeWrapper>
                   {project.technologies.map((tech) => (
-                    <Badge>{tech}</Badge>
+                    <Badge key={`${project}${tech}`}>{tech}</Badge>
                   ))}
                 </BadgeWrapper>
               </ProjectCardCover>

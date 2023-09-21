@@ -11,6 +11,9 @@ const Badge = styled.div`
   padding: 3px;
   background: var(--white);
   color: var(--black);
+  @media (max-width: 600px) {
+    height: 20px;
+  }
 `;
 
 export default Badge;
