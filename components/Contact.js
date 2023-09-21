@@ -7,8 +7,8 @@ import axios from "axios";
 const ContactSection = styled.section`
   height: 100%;
   width: 100%;
-  background: black;
-  color: white;
+  background: var(--black);
+  color: var(--white);
   font-family: "Courier New", Courier, monospace;
   padding-left: 5em;
   display: grid;
@@ -63,7 +63,7 @@ const ContactForm = styled.form`
   margin-right: 5em;
   margin-bottom: 2em;
   padding: 2em;
-  border: 1px solid white;
+  border: 1px solid var(--white);
   border-radius: 1em;
   height: 90%;
   @media (max-width: 876px) {
@@ -75,14 +75,14 @@ const ContactFormHeading = styled.div`
   font-size: 3em;
   text-align: center;
   margin-bottom: 1.5em;
-  color: white;
+  color: var(--white);
   font-family: "Courier New", Courier, monospace;
 `;
 
 const Submit = styled.button`
-  border: 1px solid white;
-  background: black;
-  color: white;
+  border: 1px solid var(--white);
+  background: var(--black);
+  color: var(--white);
   width: 50%;
   height: 3em;
   font-family: "Courier New", Courier, monospace;
@@ -91,31 +91,31 @@ const Submit = styled.button`
   cursor: pointer;
   margin-top: 1em;
   &:hover {
-    background: white;
-    color: black;
+    background: var(--white);
+    color: var(--black);
   }
 `;
 
 const Input = styled.input`
-  background: black;
-  border: 1px solid white;
+  background: var(--black);
+  border: 1px solid var(--white);
   width: 80%;
-  color: white;
+  color: var(--white);
   font-family: "Courier New", Courier, monospace;
   height: 2.5em;
 `;
 
 const TextArea = styled.textarea`
-  background: black;
-  border: 1px solid white;
+  background: var(--black);
+  border: 1px solid var(--white);
   width: 80%;
-  color: white;
+  color: var(--white);
   font-family: "Courier New", Courier, monospace;
   height: 10em;
 `;
 
 const InputLabel = styled.label`
-  color: white;
+  color: var(--white);
   text-align: left;
   margin-bottom: 1em;
   display: block;

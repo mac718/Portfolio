@@ -7,7 +7,7 @@ import RecentRepos from "./RecentRepos";
 import Contact from "./Contact";
 
 const MainWrapper = styled.div`
-  background: black;
+  background: var(--black);
   width: 100%;
   height: 100%;
   display: flex;
@@ -18,8 +18,8 @@ const MainWrapper = styled.div`
 `;
 
 const Hero = styled.div`
-  background: black;
-  color: white;
+  background: var(--black);
+  color: var(--white);
   font-family: "Courier New", Courier, monospace;
   height: 100vh;
   width: 100%;
@@ -31,6 +31,7 @@ const Hero = styled.div`
 
 const ClearanceDiv = styled.div`
   margin-bottom: 5em;
+  background: var(--black);
 `;
 
 const SectionButtonAnchor = styled.a`
@@ -39,15 +40,15 @@ const SectionButtonAnchor = styled.a`
   border: 1px solid white;
   border-radius: 1em;
   background: transparent;
-  color: white;
+  color: var(--white);
   font-family: "Courier New", Courier, monospace;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   &:hover {
-    background: white;
-    color: black;
+    background: var(--white);
+    color: var(--black);
   }
   opacity: 0;
   animation: ${(props) =>

@@ -1,3 +1,8 @@
+:root {
+  --white: #fdfefe;
+  --black: #121212;
+}
+
 html {
   scroll-behavior: smooth;
 }

@@ -6,23 +6,23 @@ import SocialIconsNav from "./UI/SocialIconsNav";
 
 const transitionBg = keyframes`
   from {
-    color: white;
+    color: var(--white);
   }
   to {
-    color: black;
-    background: white;
+    color: var(--black);
+    background: var(--white);
     opacity: 0.9;
   }
 `;
 
 const transitionBackBg = keyframes`
   from {
-    color: black;
-    background: white;
+    color: var(--black);
+    background: var(--white);
     opacity: 0.9;
   }
   to {
-    color: white;
+    color: var(--white);
   }
 `;
 
@@ -34,7 +34,7 @@ const Nav = styled.nav`
   justify-content: space-evenly;
   font-family: "Courier New", Courier, monospace;
   font-size: 1.5em;
-  color: white;
+  color: var(--white);
   position: fixed;
   padding: 1em;
   z-index: 1;

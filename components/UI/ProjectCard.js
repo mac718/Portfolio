@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
 const ProjectCard = styled.div`
-  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50%;
+  height: 300px;
   margin: 1em;
   position: relative;
   background: gray;

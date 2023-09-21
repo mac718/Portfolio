@@ -3,9 +3,9 @@ import profile from "../public/profile_pic.jpeg";
 import Image from "next/image";
 
 const BioWrapper = styled.div`
-  background: black;
+  background: var(--black);
   font-family: "Courier New", Courier, monospace;
-  color: white;
+  color: var(--white);
   width: 100%;
   height: 100%;
   display: flex;
@@ -27,7 +27,7 @@ const ImageWrapper = styled.div`
 `;
 
 const BioHeading = styled.div`
-  color: white;
+  color: var(--white);
   text-align: center;
   font-family: "Courier New", Courier, monospace;
   font-size: 3em;

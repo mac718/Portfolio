@@ -9,18 +9,22 @@ import SectionButton from "./UI/SectionButton";
 
 const ProjectsSection = styled.section`
   width: 100%;
-  background: black;
-  height: 100%;
+  background: var(--black);
+  height: 100vh;
   margin-bottom: 5em;
   text-align: center;
+  @media (max-width: 1000px) {
+    height: 100%;
+  }
 `;
 
 const ProjectsWrapper = styled.div`
   width: 100%;
+  height: 100%;
   padding: 1em;
   display: flex;
   justify-content: space-evenly;
-  background: black;
+  background: var(--black);
 
   @media (max-width: 1000px) {
     flex-direction: column;
@@ -48,7 +52,7 @@ const ProjectCardCover = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: var(--white);
   font-family: "Courier New", Courier, monospace;
   /* &:hover {
     animation: ${css`
@@ -79,7 +83,7 @@ const ScreenIconWrapper = styled.span`
 `;
 
 const ProjectsHeading = styled.div`
-  color: white;
+  color: var(--white);
   text-align: center;
   font-family: "Courier New", Courier, monospace;
   font-size: 3em;
@@ -94,7 +98,7 @@ const Projects = () => {
         {projects.map((project) => {
           return (
             <ProjectCard key={project.name}>
-              <Image src={project.image} alt="project image" />
+              <Image src={project.image} alt="project image" layout="fill" />
               <ProjectCardCover
                 animateCover={animateCover}
                 onMouseOver={() => setAnimateCover(true)}
@@ -112,6 +116,7 @@ const Projects = () => {
                     </ScreenIconWrapper>
                   </a>
                 </ProjectCardCoverWrapper>
+                <h2>{project.name}</h2>
                 <p>{project.subtitle}</p>
               </ProjectCardCover>
             </ProjectCard>
