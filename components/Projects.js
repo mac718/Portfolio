@@ -89,6 +89,30 @@ const ProjectsHeading = styled.div`
   font-size: 3em;
 `;
 
+const ToolTipText = styled.span`
+  visibility: hidden;
+  width: 120px;
+  background-color: var(--white);
+  color: var(--black);
+  text-align: center;
+  font-size: 15px;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+`;
+
+const ToolTip = styled.div`
+  position: relative;
+  display: inline-block;
+  &:hover ${ToolTipText} {
+    transition: visibility 0s linear 1s;
+    visibility: visible;
+  }
+`;
+
 const Projects = () => {
   const [animateCover, setAnimateCover] = useState(false);
   return (
@@ -106,14 +130,20 @@ const Projects = () => {
               >
                 <ProjectCardCoverWrapper>
                   <a href={project.codeLink} target="_blank" rel="noreferrer">
-                    <GitHubIconWrapper>
-                      <GoMarkGithub />
-                    </GitHubIconWrapper>
+                    <ToolTip>
+                      <ToolTipText>GitHub Repo</ToolTipText>
+                      <GitHubIconWrapper>
+                        <GoMarkGithub />
+                      </GitHubIconWrapper>
+                    </ToolTip>
                   </a>
                   <a href={project.liveLink} target="_blank" rel="noreferrer">
-                    <ScreenIconWrapper>
-                      <MdScreenShare />
-                    </ScreenIconWrapper>
+                    <ToolTip>
+                      <ToolTipText>Live Site</ToolTipText>
+                      <ScreenIconWrapper>
+                        <MdScreenShare />
+                      </ScreenIconWrapper>
+                    </ToolTip>
                   </a>
                 </ProjectCardCoverWrapper>
                 <h2>{project.name}</h2>
