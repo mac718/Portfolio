@@ -50,7 +50,7 @@ const Nav = styled.nav`
 
 const SectionsWrapper = styled.div`
   display: flex;
-  width: 33%;
+  width: 50%;
   justify-content: space-between;
   @media (max-width: 850px) {
     flex-direction: column;
@@ -69,7 +69,7 @@ const SocialWrapper = styled.div`
 
 const TopWrapper = styled.div`
   display: flex;
-  width: 33%;
+  width: 25%;
 `;
 
 const NavItem = styled.div`
@@ -97,7 +97,9 @@ const NavBar = () => {
     <Nav id="nav" ref={nav} backgroundTransition={backgroundTransition}>
       <TopWrapper>
         <a href="#top">Top</a>
-        <MdArrowUpward />
+        <a href="#top">
+          <MdArrowUpward />
+        </a>
       </TopWrapper>
       <SectionsWrapper backgroundTransition={backgroundTransition}>
         <NavItem>

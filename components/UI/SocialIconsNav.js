@@ -4,7 +4,7 @@ import { FaLinkedin, FaMedium, FaTwitter } from "react-icons/fa";
 const SocialWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
-  width: 33%;
+  width: 25%;
   @media (max-width: 850px) {
     flex-direction: column;
     align-items: flex-end;
